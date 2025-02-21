@@ -18,4 +18,10 @@ def add_to_cart(request, product_id):
                                                        user=request.user)
     cart_item.quantity += 1
     cart_item.save()
-    return redirect('cart:view_cart')
+    return redirect('Cart:view_cart')
+
+def remove_from_cart(request, item_id):
+    cart_item = CartItem.objects.get(id=item_id)
+    cart_item.delete()
+    return redirect('Cart:view_cart')
+

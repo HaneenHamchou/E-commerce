@@ -42,9 +42,10 @@
 
         {% for item in cart_items %}
         <div class="product-item">
+            <img src="{{item.product.image.url}}" alt="{{ item.product.name }}" width="200" height="150">
             <p>{{ item.product.name }} ({{ item.quantity }})</p>
             <p>Price: Rs{{ item.product.price }}</p>
-            <a href="{% url 'cart:remove_from_cart' item.id %}">Remove</a>
+            <a href="{% url 'Cart:remove_from_cart' item.id %}">Remove</a>
         </div>
         {% empty %}
         <p>Your cart is empty.</p>
