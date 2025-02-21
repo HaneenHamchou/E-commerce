@@ -44,7 +44,7 @@
                 <p>{{ product.description }}</p> 
                 <p>Price: Rs{{ product.price }}</p> 
                 <a href="#" class="buy-now-button">Buy Now</a>
-                <a class="buy-now-button" href="#">Add to Cart</a>
+                <a class="buy-now-button" href="{% url Cart:add_to_cart' product.id %}">Add to Cart</a>
             </li>
         {% endfor %}
     </ul>
