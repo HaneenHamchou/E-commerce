@@ -3,8 +3,6 @@
 <head> 
     <meta charset="UTF-8"> 
     <title>Product Cataloge</title> 
-    <p><a href="{% url 'logout' %}" class="buy-now-button">Logout</a></p>
-    <p><a href="{% url 'cart:view_cart' %}" class="buy-now-button">View Cart</a></p>
     <style> 
         /* Add CSS styles for flex container and items */
         .product-list { 
@@ -51,5 +49,7 @@
             </li>
         {% endfor %}
     </ul>
+    <p style="text-align: center; width: 120px;"><a href="{% url 'logout' %}" class="buy-now-button">Logout</a></p>
+    <p style="text-align: center; width: 120px;"><a href="{% url 'cart:view_cart' %}" class="buy-now-button">View Cart</a></p>
 </body>
 </html>
