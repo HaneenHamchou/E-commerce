@@ -16,13 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Cart.views import product_list
+from Cart.views import *
 from ecommerce import  settings
 from django.conf.urls.static import static
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('Cart.urls'))
+    path('', include('Cart.urls')),
+    path('login/', login_page, name='login_page'),
+    path('register/', register_page, name='register'),
+    path('logout/', signout, name='logout'),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
