@@ -2,7 +2,9 @@
 <html lang="en"> 
 <head> 
     <meta charset="UTF-8"> 
-    <title>Product Catalog</title> 
+    <title>Product Cataloge</title> 
+    <p><a href="{% url 'logout' %}" class="buy-now-button">Logout</a></p>
+    <p><a href="{% url 'cart:view_cart' %}" class="buy-now-button">View Cart</a></p>
     <style> 
         /* Add CSS styles for flex container and items */
         .product-list { 
@@ -35,6 +37,7 @@
     </style>
 </head>
 <body>
+    <p>Hello, {{request.user}}</p>
     <h1>Products Catalog</h1>
     <ul class="product-list"> 
         {% for product in products %} 
@@ -47,7 +50,6 @@
                 <a class="buy-now-button" href="{% url 'cart:add_to_cart' product.id %}">Add to Cart</a>
             </li>
         {% endfor %}
-        <p><a href="{% url 'logout' %}" class="buy-now-button">Logout</a></p>
     </ul>
 </body>
 </html>

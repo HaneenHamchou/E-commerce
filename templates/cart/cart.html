@@ -39,6 +39,7 @@
 <body>
     <h1>Your Shopping Cart</h1>
     <div class="product-list">
+    <p>Hello, {{request.user}}</p>
 
         {% for item in cart_items %}
         <div class="product-item">

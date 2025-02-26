@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render # type: ignore
 from Cart.models import Product, CartItem
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
+from django.contrib.auth.models import User
 
 # Create your views here.
 def product_list(request):
